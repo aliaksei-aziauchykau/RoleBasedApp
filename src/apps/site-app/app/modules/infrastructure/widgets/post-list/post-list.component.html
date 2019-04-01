@@ -1,0 +1,13 @@
+<div *ngFor="let post of displayPosts">
+    <div class="card mt-4 mb-2">
+        <div class="card-header">
+            {{post.title}}
+        </div>
+        <div>
+            <quill-editor name="messagePostList" [(ngModel)]="post.message" disabled="disabled" [modules]="{toolbar: false}"></quill-editor>
+        </div>
+        <div class="card-footer text-muted">
+            Visible for: {{visible(post)}}
+        </div>
+    </div>
+</div>

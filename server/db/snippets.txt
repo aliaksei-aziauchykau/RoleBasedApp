@@ -1,0 +1,12 @@
+
+Mongo Shell
+mongo mongodb://test-shard-00-00-t1vbk.mongodb.net:27017,test-shard-00-01-t1vbk.mongodb.net:27017,test-shard-00-02-t1vbk.mongodb.net:27017/frontcamp?replicaSet=Test-shard-0" --ssl --authenticationDatabase admin --username Aliaksei --password qwer1T22
+mongo "mongodb://test-shard-00-00-t1vbk.mongodb.net:27017,test-shard-00-01-t1vbk.mongodb.net:27017,test-shard-00-02-t1vbk.mongodb.net:27017/test?replicaSet=Test-shard-0" --ssl --authenticationDatabase admin --username Aliaksei --password qwer1T22
+
+Compass 
+mongo mongodb://Aliaksei:qwer1T22@test-shard-00-00-t1vbk.mongodb.net:27017,test-shard-00-01-t1vbk.mongodb.net:27017,test-shard-00-02-t1vbk.mongodb.net:27017/frontcamp?replicaSet=Test-shard-0&ssl=true
+mongo mongodb://Aliaksei:qwer1T22@test-shard-00-00-t1vbk.mongodb.net:27017,test-shard-00-01-t1vbk.mongodb.net:27017,test-shard-00-02-t1vbk.mongodb.net:27017/admin?replicaSet=Test-shard-0&ssl=true
+
+Import 
+mongoimport --uri "mongodb://Aliaksei:qwer1T22@test-shard-00-00-t1vbk.mongodb.net:27017,test-shard-00-01-t1vbk.mongodb.net:27017,test-shard-00-02-t1vbk.mongodb.net:27017/frontcamp?replicaSet=Test-shard-0&ssl=true&authSource=admin" --collection articles --drop --file ./db/sets/articles.json
+

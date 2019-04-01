@@ -1,0 +1,37 @@
+.Presentor-picture {
+    background: url(../../../../../../../content/images/present1.jpg) no-repeat center top / cover;
+    min-height: calc(100vh - 93px);
+    padding: 2em 0 3em;
+}
+
+.Presentor-container {
+    padding-top: 10em;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+.Presentor-title h1 {
+    color: white;
+    text-transform: uppercase;
+}
+
+.Presentor-registration {
+    margin-top: 10em;
+}
+
+.Presentor-features {
+    margin-top: 1em;
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+.Presentor-features ul {
+    padding: 0;
+}
+
+.Presentor-features li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 0 2em;
+    margin: 0 2em;
+}

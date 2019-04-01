@@ -1,0 +1,9 @@
+<label for="product-name" class="col-sm-2 col-form-label">{{ model.label }}:</label>
+<div (click)="click()" class="col-auto text" *ngIf="!model.state; else elseBlock">
+    {{ model.value ? model.value : "No Information" }}
+</div>
+<ng-template #elseBlock>
+    <div class="col-auto">
+        <input #focusTarget type="text" class="form-control" id="product name" [placeholder]="'Ex: ' +  model?.placeholder" (ngModelChange)="model.value = $event" [ngModel]="model.value">
+    </div>
+</ng-template>

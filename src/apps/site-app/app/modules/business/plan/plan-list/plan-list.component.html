@@ -1,0 +1,7 @@
+<div *ngIf="plans.length === 0">
+    No items
+</div>
+
+<ul *ngFor="let plan of plans" class="list-group">
+    <li class="list-group-item">[{{ plan.name }}]</li>
+</ul>

@@ -1,0 +1,12 @@
+<mc-common-layout>
+    <section layout-before>
+        <div class="container-fluid p-0">
+            <mc-picture-presentor></mc-picture-presentor>
+        </div>
+    </section>
+    <section>
+        <mc-spinner [show]="isDataLoaded">
+            <mc-product-present-list [products]="products"></mc-product-present-list>
+        </mc-spinner>
+    </section>
+</mc-common-layout>

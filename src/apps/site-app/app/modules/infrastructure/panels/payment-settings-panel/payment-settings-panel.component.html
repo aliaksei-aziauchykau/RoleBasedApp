@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col">
+        <div class="card mb-3">
+            <div class="card-header">
+                Add your payment methods
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <mc-stripe-payment-attach-method [settings]="paymentSettings" (onToken)="onToken($event)"></mc-stripe-payment-attach-method>
+                </li>
+                <li class="list-group-item">
+                    <mc-generic-list [items]="payments"></mc-generic-list>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

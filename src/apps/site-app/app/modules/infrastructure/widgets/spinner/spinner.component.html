@@ -1,0 +1,10 @@
+
+<div *ngIf="show && !isTest; else elseBlock" class="row justify-content-center mt-5">
+    <div class="col-3">
+        <div class="loader"></div>
+    </div>
+</div>
+
+<ng-template #elseBlock>
+    <ng-content></ng-content>
+</ng-template>

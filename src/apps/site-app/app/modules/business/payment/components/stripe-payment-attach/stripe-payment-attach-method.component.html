@@ -1,0 +1,29 @@
+<div class="form-container">
+    <form (submit)="submitOnForm($event)" action="/charge" method="post" id="payment-form">
+        <div *ngIf="settings.isPaymentNameEnabled" class="form-group">
+            <label for="customer-payment-name">Payment name</label>
+            <input type="text" name="customerPaymentName" [(ngModel)]="paymentName"  class="form-control" id="customer-payment-name" placeholder="Enter name" />
+        </div>
+        <div *ngIf="settings.isEmailEnabled"  class="form-group">
+            <label for="customer-email">Email address</label>
+            <input type="email" name="customerEmail" [(ngModel)]="email"  class="form-control" id="customer-email" placeholder="Enter email" />
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-10">
+                <label for="card-element">
+                    Credit or debit card
+                </label>
+                <div id="card-element" (change)="changeOnCard($event)">
+                    <!-- A Stripe Element will be inserted here. -->
+                </div>
+    
+                <!-- Used to display form errors. -->
+                <div id="card-errors" role="alert">
+                    {{ message }}
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary">Add Payment</button>
+    </form>
+</div>

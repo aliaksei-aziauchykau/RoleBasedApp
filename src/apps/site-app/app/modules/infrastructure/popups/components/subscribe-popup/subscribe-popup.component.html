@@ -1,0 +1,24 @@
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Subscribe to read post</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5>Select plan</h5>
+                <ul *ngFor="let plan of plans" class="list-group">
+                    <li (click)="selectPlan(plan)" [class.selected]="plan === selectedPlan" class="list-group-item mb-4">{{plan.name}}</li>
+                </ul>
+                <h5>Select payment method or create new one</h5>
+                <mc-generic-list [items]="paymentMethods" (onChange)="selectPaymentChange($event)"></mc-generic-list>
+            </div>
+            <div class="modal-footer">
+                <button (click)="createSubscription()" type="button" class="btn btn-primary">Create subscription</button>
+            </div>
+        </div>
+    </div>
+</div>

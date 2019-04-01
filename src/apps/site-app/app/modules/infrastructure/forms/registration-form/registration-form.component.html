@@ -1,0 +1,83 @@
+<div class="row justify-content-center pt-4 px-4">
+    <div class="col-12 col-sm-12 col-md-8">
+        <form (ngSubmit)="onSubmit()" [formGroup]="registrationForm" class="p-4 registration--form">
+            <div class="form-group">
+                <label for="nickName">Nick name</label>
+                <input name="nickName" formControlName="nickName"  type="text" class="form-control" id="nickName" aria-describedby="nickNameHelp" placeholder="Enter nickname" />
+                <div class="alert alert-danger mt-2" role="alert" *ngIf="nickNameControl.invalid && (nickNameControl.dirty || nickNameControl.touched)">
+                    <div *ngIf="nickNameControl.errors.required">
+                        Nickname is required field
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="emailAddress">Email address</label>
+                <input name="emailAddress" formControlName="email" type="email" class="form-control" id="emailAddress" aria-describedby="emailHelp" placeholder="Enter email"
+                    requred/>
+                <div class="alert alert-danger mt-2" role="alert" *ngIf="emailControl.invalid && emailControl.touched">
+                    <div *ngIf="emailControl.errors.email">
+                        This is not email format
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row justify-content-between">
+                    <div class="col">
+                        <label for="passwordEntered">Enter password</label>
+                    </div>
+                    <div *ngIf="isValidEnteredPassword" class="col col-auto">
+                        <span class="oi oi-circle-check icon success-mark"></span>
+                    </div>
+                </div>
+                <input name="passwordEntered" formControlName="password" type="password" class="form-control" id="passwordEntered" placeholder="Enter password" />
+                <div class="alert alert-danger mt-2" role="alert" *ngIf="passwordControl.invalid && passwordControl.touched">
+                    <div *ngIf="passwordControl.errors.required">
+                        Password is required field
+                    </div>
+                    <div *ngIf="passwordControl.errors.maxlength">
+                        Password should less then 12 symbols
+                    </div>
+                    <div *ngIf="passwordControl.errors.minlength">
+                        Password should more then 4 symbols
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row justify-content-between">
+                    <div class="col">
+                        <label for="passwordConfirmed">Confirm password</label>
+                    </div>
+                    <div *ngIf="this.isValidConfirmedPassword" class="col col-auto">
+                        <span class="oi oi-circle-check icon success-mark"></span>
+                    </div>
+                </div>
+                <input name="passwordConfirmed" formControlName="confirmPassword" type="password" class="form-control" id="passwordConfirmed" placeholder="Confirm password"
+                    required/>
+                <div class="alert alert-danger mt-2" role="alert" *ngIf="registrationForm.errors?.confirmedField && (confirmPasswordControl.dirty || confirmPasswordControl.touched)">
+                    <div>
+                        Password should be confirmed
+                    </div>
+                </div>
+            </div>
+            <div class="pb-4">
+                <div class="form-check">
+                    <input class="form-check-input" formControlName="role" type="radio" id="subscriberRadio" value="1">
+                    <label class="form-check-label" for="subscriberRadio">Subscriber</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" formControlName="role" type="radio" id="landerRadio" value="2">
+                    <label class="form-check-label" for="landerRadio">Lander</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" formControlName="role" type="radio" id="adminRadio" value="3">
+                    <label class="form-check-label" for="adminRadio"> Admin </label>
+                </div>
+            </div>
+            <button type="submit" [disabled]="registrationForm.invalid" class="btn btn-primary">Submit</button>
+            <div class="form-group pt-3">
+                <a routerLink="/login">To back</a>
+                <a routerLink="/home">To home</a>
+            </div>
+        </form>
+    </div>
+</div>

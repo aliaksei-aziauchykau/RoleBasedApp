@@ -1,0 +1,24 @@
+
+$icon-font-path: "../../../../../../../content/fonts/";
+@import "../../../../../../../css/open-iconic-bootstrap.scss";
+
+.list-group-item {
+    padding: 0px;
+    background-color: #f8f9fa;
+    border: none;
+}
+
+.list-group-item span {
+    padding: 5px;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+form {
+    padding: 1em;
+    border: 1px solid mediumpurple;
+    border-radius: 30px;
+    background-color: #f8f9fa;
+}

@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col">
+        <div class="card mb-3">
+            <div class="card-header">
+                Fill information about your product
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <mc-user-product-details-form></mc-user-product-details-form>
+                </li>
+                <li class="list-group-item">
+                    <button class="btn btn-primary btn-sm" (click)="bindProduct()" [disabled]="isBindedProduct">Bind Product</button>
+                </li>
+            </ul>
+        </div>
+        <div class="card mb-3">
+                <div class="card-header">
+                    Create your plans
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                       <mc-add-plans-form></mc-add-plans-form>
+                    </li>
+                    <li class="list-group-item">
+                       <mc-plan-list [plans]="stripeInfo && stripeInfo.plans || []"></mc-plan-list>
+                    </li>
+                </ul>
+            </div>
+        <div class="card">
+            <div class="card-header">
+                Deploy
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <button (click)="linkProduct()" class="btn btn-primary btn-sm"> {{ isDeployed ? 'Unlink' : 'Link' }} </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+node_modules
+dist
+db
+.vscode
+server/public/build/**/*
+coverage
+.env
+typings

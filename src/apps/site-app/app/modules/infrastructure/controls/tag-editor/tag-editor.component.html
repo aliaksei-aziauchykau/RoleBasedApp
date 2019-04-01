@@ -1,0 +1,16 @@
+
+<label for="tags-post">Tags</label>
+<div class="form-inline pb-2">
+        <input type="text" class="form-control form-control-sm mr-sm-2" id="tags-post" type="text" [(ngModel)]="currentValue" placeholder="Tag name" />
+        <button [disabled]="isDisabled" (click)="add()" class="btn btn-secondary btn-sm mt-2 mt-sm-0">Add Tag</button>
+</div>
+<div class="tag-list">
+    <ul>
+        <li *ngFor="let tag of tags">
+            <span class="badge badge-pill badge-info">
+                {{ tag }}
+                <span (click)="remove(tag)" class="badge badge-pill badge-light tag-close">X</span>
+            </span>
+        </li>
+    </ul>
+</div>

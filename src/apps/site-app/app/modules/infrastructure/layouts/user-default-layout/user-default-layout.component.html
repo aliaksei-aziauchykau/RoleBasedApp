@@ -1,0 +1,12 @@
+<mc-default-navigation 
+    [title]="title"
+    [isSubscriptionDisabled]="isSubscriptionDisabled">
+</mc-default-navigation>
+<div class="page-wrap">
+    <ng-content select="[layout-before]"></ng-content>
+    <div class="container">
+        <ng-content></ng-content>
+    </div>
+    <ng-content select="[layout-after]"></ng-content>
+</div>
+<mc-default-footer></mc-default-footer>

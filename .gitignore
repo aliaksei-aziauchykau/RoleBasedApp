@@ -1,0 +1,12 @@
+/node_modules
+/dist
+/db/mongodb
+/db/exports
+/db/load
+/db/sets
+/server/public/build
+/.vscode
+/coverage
+/.env
+/typings
+/env

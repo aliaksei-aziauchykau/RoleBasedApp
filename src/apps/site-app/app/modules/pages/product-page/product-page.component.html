@@ -1,0 +1,20 @@
+<mc-user-default-layout [title]="productInfo?.productName" [isSubscriptionDisabled]="productInfo?.isMyOwnProduct">
+    <section>
+        <div *ngIf="productInfo?.isMyOwnProduct" class="row justify-content-center pt-4">
+            <div class="col col-md-8">
+                <mc-post-editor [plans]="productInfo?.plans"></mc-post-editor>
+            </div>
+        </div>
+        <div class="row justify-content-center pt-4">
+            <div class="col col-md-8">
+                <mc-post-list [posts]="filteredPosts"></mc-post-list>
+            </div>
+        </div>
+    </section>
+    <div>
+        <mc-subscribe-popup 
+            [productName]="productInfo?.productName"
+            [plans]="productInfo?.plans">
+        </mc-subscribe-popup>
+    </div>
+</mc-user-default-layout>

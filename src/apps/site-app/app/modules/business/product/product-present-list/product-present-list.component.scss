@@ -1,0 +1,25 @@
+$icon-font-path: "../../../../../../../content/fonts/";
+@import "../../../../../../../css/open-iconic-bootstrap.scss";
+
+
+.Presentor-search {
+    padding: 1.5em;
+    text-align: center;
+}
+
+.Presentor-search input {
+    display: inline-block;
+    width: 200px
+}
+
+.Presentor-search div {
+    display: inline-block;
+}
+
+.Presentor-search .icon {
+    right: 15px;
+    top: 14px;
+    font-size: 40px;
+    color: black;
+    text-align: center;
+}

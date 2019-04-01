@@ -1,0 +1,33 @@
+<div class="row justify-content-between py-5">
+    <div class="col-12 col-sm-4 col-md-2 pb-4">
+        <div class="nav flex-column nav-pills" id="setting-details-pills" role="tablist" aria-orientation="vertical">
+            <a (click)="changePanel(ActivePanelEnum.Stripe)" class="nav-link" [class.active]="isActive(ActivePanelEnum.Stripe)" id="stripe-account-pill-tab" data-toggle="pill"
+                href="javascript:void(0)" role="tab" aria-selected="true">Stripe account</a>
+            <a (click)="changePanel(ActivePanelEnum.Product)" class="nav-link" [class.active]="isActive(ActivePanelEnum.Product)" id="product-pill-tab" data-toggle="pill" 
+                href="javascript:void(0)" role="tab" aria-selected="false">Product</a>
+            <a (click)="changePanel(ActivePanelEnum.PaymentMethods)" class="nav-link" [class.active]="isActive(ActivePanelEnum.PaymentMethods)" id="payment-methods-pill-tab" data-toggle="pill" 
+                href="javascript:void(0)" role="tab" aria-selected="false">Payment Methods</a>
+
+        </div>
+
+    </div>
+    <div class="col-12 col-sm-8 col-md-10">
+        <div class="tab-content" id="setting-details-pills" [ngSwitch]="activePanel">
+            <div *ngSwitchCase="ActivePanelEnum.Stripe" class="tab-pane fade show active" id="stripe-account-pill" role="tabpanel" aria-labelledby="stripe-account-pill">
+                <mc-stripe-settings-panel>
+
+                </mc-stripe-settings-panel>
+            </div>
+            <div *ngSwitchCase="ActivePanelEnum.Product" class="tab-pane fade show active" id="product-pill" role="tabpanel" aria-labelledby="product-pill">
+                <mc-product-settings-panel>
+
+                </mc-product-settings-panel>
+            </div>
+            <div *ngSwitchCase="ActivePanelEnum.PaymentMethods" class="tab-pane fade show active" id="product-pill" role="tabpanel" aria-labelledby="payment-methods-pill">
+                <mc-payment-settings-panel>
+
+                </mc-payment-settings-panel>
+            </div>
+        </div>
+    </div>
+</div>

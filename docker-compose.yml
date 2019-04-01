@@ -1,0 +1,40 @@
+version: "3"
+services:
+  node:
+    image: "node:latest"
+    user: "node"
+    working_dir: /home/node/app
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+    environment:
+      - NODE_ENV=development
+      - APP_TYPE=site
+      - USE_DEVSERVER=true
+      - STRIPE_PB_KEY="pk_test_m1C0eKQ2phh0qa1TQEI1I5fr"
+      - STRIPE_PR_KEY="sk_test_AgbMWGTpF5zDVIBRtEdSRrx9"
+      - STRIPE_APP_KEY="ca_D5eeZa4K7p5LDsVOwppZRp7auJbo9Vsl"
+      - UI_API_IS_TEST=false
+      - DB_LOCAL=false
+      - DB_NAME_DEFAULT=frontcamp
+      - DB_LOGIN="Aliaksei"
+      - DB_PASSWORD="qwer1T22"
+      - DB_SHARD0="test-shard-00-00-t1vbk.mongodb.net"
+      - DB_SHARD1="test-shard-00-01-t1vbk.mongodb.net"
+      - DB_SHARD1="test-shard-00-02-t1vbk.mongodb.net"
+      - DB_PORT=27017
+      - DB_REPLICASET="replicaSet=Test-shard-0"
+      - DB_ADDITIONAL="&ssl=true&authSource=admin"
+    ports: 
+        - "4000:3001"
+    volumes:
+      - ./:/home/node/app
+    expose:
+      - "8081"
+    command: >
+        sh -c "npm run ui:build && npm run server:dev"

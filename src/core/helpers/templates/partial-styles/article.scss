@@ -1,0 +1,31 @@
+.news-container li {
+    border: 1px solid;
+    width: 50%;
+    padding: 30px;
+    background: #505050;
+    list-style-type: none;
+}
+
+.news-container .description {
+    padding-bottom: 10px;
+    color: white;
+}
+
+.news-container .image {
+    height: 340px;
+}
+
+.news-container .source {
+    color: #6ac8ec;
+}
+
+.image {
+    max-width:auto;
+    max-height:auto;
+    display: block;
+}
+
+.header {
+    font-family: "Lucida Bright",Georgia,serif;
+    color: #d1c8c8;
+}

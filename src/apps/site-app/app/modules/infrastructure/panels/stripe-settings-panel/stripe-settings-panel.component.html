@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-header">
+        Stripe account
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <div *ngIf="stripeInfo?.stripeUserId; else elseBlock">
+                <div class="alert alert-success" role="alert">
+                    Your Stripe account was succesfully connected
+                </div>
+            </div>
+            <ng-template #elseBlock>
+                <a [href]="stripeLink" class="btn btn-primary">Connect with Stripe</a>
+            </ng-template>
+        </li>
+    </ul>
+</div>

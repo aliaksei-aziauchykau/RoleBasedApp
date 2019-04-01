@@ -1,0 +1,37 @@
+
+button {
+    outline: none;
+}
+
+.mc-container {
+    width: 250px;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-fill-mode: both;
+
+    animation-duration: 5s;
+    animation-fill-mode: both;
+}
+
+.mc-container:hover {
+    opacity: 1;
+    animation-play-state: paused;
+    animation-name: none;
+    -webkit-animation-play-state: paused;
+    -webkit-animation-name: none;
+}
+
+@-webkit-keyframes fadeout {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+ }
+ 
+ @keyframes fadeout {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+ }
+ 
+ .fade-out {
+    -webkit-animation-name: fadeout;
+    animation-name: fadeout;
+ }
+

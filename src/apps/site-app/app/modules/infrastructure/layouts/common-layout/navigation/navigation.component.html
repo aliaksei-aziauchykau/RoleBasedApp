@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light py-4">
+    <div class="container">
+
+        <a href="javascript:void(0);" class="navbar-brand">
+            <h3 class="d-inline align-middle">
+                Market
+            </h3>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-market" aria-controls="navbarNavDropdown"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-market">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active px-auto px-md-3">
+                    <a [routerLink]="['/']" class="nav-link">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item px-auto px-auto px-md-3">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item px-auto px-auto px-md-3">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li *ngIf="logged" class="nav-item px-auto px-auto px-md-3">
+                    <a routerLink="/user" class="nav-link" href="#">User</a>
+                </li>
+                <li class="nav-item pl-auto pl-md-3">
+                    <mc-login-button></mc-login-button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
